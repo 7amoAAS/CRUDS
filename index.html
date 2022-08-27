@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CRUD</title>
+		<!-- FontAwesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+		/>
+		<!-- Normalize Css File -->
+		<link rel="stylesheet" href="font/fontawesome.min.css" />
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Main Css File -->
+		<link rel="stylesheet" href="css/cruds.css" />
+	</head>
+	<body>
+		<div class="curd-main">
+			<!-- Head -->
+			<div class="head">
+				<h2>cruds</h2>
+				<p>product management system</p>
+			</div>
+			<div class="container">
+				<div class="curd-input">
+					<!-- Inputs -->
+					<form id="form flex flex-ai-c">
+						<!-- <svg width="25" height="25" viewBox="0 0 24 24">
+							<path
+								fill="#ddddddae"
+								d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"
+							/>
+						</svg> -->
+						<div class="title input">
+							<input type="text" id="title" placeholder="Title" />
+						</div>
+						<div class="get-total input flex flex-jc-c">
+							<input
+								onkeyup="getTotal()"
+								type="number"
+								id="price"
+								placeholder="Price"
+							/>
+							<input
+								onkeyup="getTotal()"
+								type="number"
+								id="taxes"
+								placeholder="Taxes"
+							/>
+							<input
+								onkeyup="getTotal()"
+								type="number"
+								id="ads"
+								placeholder="Ads"
+							/>
+							<input
+								onkeyup="getTotal()"
+								type="number"
+								id="discount"
+								placeholder="Discount"
+							/>
+							<div class="total">
+								Total:
+								<span id="total"></span>
+							</div>
+						</div>
+						<div class="count input">
+							<input type="text" id="count" placeholder="Count" />
+						</div>
+						<div class="category input">
+							<input type="text" id="category" placeholder="Category" />
+						</div>
+						<!-- <div class="date flex">
+							<input type="date" id="start" />
+							<input type="date" id="end" />
+						</div> -->
+					</form>
+					<div class="create">
+						<button class="btn" id="create">Create</button>
+					</div>
+					<div class="search">
+						<input type="text" id="search" placeholder="Search" />
+						<div class="search-by flex flex-jc-c flex-f-g">
+							<button id="search-by-title" class="btn">Search by tilte</button
+							><button id="search-by-category" class="btn">
+								Search by category
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Outputs -->
+			<div class="delete-all">
+				<p>warning: if you clicked on this button it'll remove everything</p>
+				<svg width="32" height="32" viewBox="0 0 24 24">
+					<path
+						fill="currentColor"
+						d="m11.3 14.3l-2.6-2.6q-.475-.475-.212-1.087Q8.75 10 9.425 10h5.15q.675 0 .937.613q.263.612-.212 1.087l-2.6 2.6q-.15.15-.325.225q-.175.075-.375.075t-.375-.075q-.175-.075-.325-.225Z"
+					/>
+				</svg>
+				<button class="btn" id="delete-all">Delete all</button>
+			</div>
+			<!-- Table -->
+			<div class="data-list">
+				<div class="container">
+					<table>
+						<tr>
+							<th>id</th>
+							<th>title</th>
+							<th>price</th>
+							<th>ads</th>
+							<th>dicount</th>
+							<th>total</th>
+							<th>category</th>
+							<th>update</th>
+							<th>delete</th>
+						</tr>
+						<tbody id="tbody"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<script src="js/app.js"></script>
+	</body>
+</html>

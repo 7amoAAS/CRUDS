@@ -1,0 +1,194 @@
+@use "./sass/index" as *;
+@use "./sass/variables" as *;
+
+.curd-main {
+	.head {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin: 3rem 0;
+		h2 {
+			font-size: $mediam-size;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $clr-primary-6;
+		}
+		p {
+			font-size: $small-size;
+		}
+	}
+	// Inputs
+	.curd-input {
+		form {
+			.title,
+			.count,
+			.category,
+			.get-total {
+				margin-bottom: 1rem;
+			}
+			@media (max-width: 991px) {
+				.get-total:not(:last-child) {
+					display: grid;
+					grid-template-columns: repeat(3, 1fr);
+					grid-template-rows: repeat(2, 1fr);
+					gap: 10px;
+					justify-content: center;
+				}
+				.get-total {
+					#discount {
+						grid-row: 2 / 2;
+					}
+					.total {
+						grid-column: 2 / 4;
+						grid-row: 2 / 3;
+					}
+				}
+			}
+			.date {
+				margin-bottom: 1rem;
+			}
+		}
+		.create {
+			margin-bottom: 2.5rem;
+			button {
+				width: fit-content;
+				display: block;
+				margin: 0 auto !important;
+				font-weight: 600;
+				color: $clr-grey-1;
+				transition: $transition;
+				cursor: pointer;
+				&:hover {
+					background-color: $clr-primary-6;
+					color: $clr-primary-1;
+				}
+			}
+		}
+		form:not(:nth-child(4)) {
+			input {
+				margin-right: 10px;
+			}
+			.total {
+				width: 100%;
+				padding: 0.3rem;
+				background-color: $clr-primary-7;
+				color: $clr-primary-1;
+				font-weight: 500;
+				border-radius: $radius 0 $radius 0;
+				span {
+					font-weight: 700;
+					letter-spacing: 1px;
+					color: $clr-grey-1;
+				}
+			}
+		}
+	}
+	.search {
+		margin-bottom: 2.5rem;
+		.search-by {
+			button {
+				width: 15rem;
+				display: block;
+				margin: 0;
+				margin-top: 1rem;
+				font-weight: 600;
+				cursor: pointer;
+				transition: $transition;
+				&:hover {
+					background-color: $clr-primary-6;
+					color: $clr-primary-1;
+				}
+			}
+		}
+	}
+	.delete-all {
+		margin-bottom: 2rem;
+		p {
+			text-align: center;
+			font-size: 1rem;
+			line-height: 1;
+			color: $clr-primary-4;
+		}
+		svg {
+			display: block;
+			margin: 0 auto;
+			color: $clr-primary-4;
+		}
+		button {
+			width: fit-content;
+			display: block;
+			margin: 0 auto;
+			font-weight: 600;
+			cursor: pointer;
+			transition: $transition;
+			&:hover {
+				background-color: #d61c4e;
+				color: $clr-primary-2;
+			}
+		}
+	}
+	.delete-all.hide {
+		display: none;
+	}
+	.delete-all.show {
+		display: block;
+	}
+	// data-list
+	.data-list {
+		@media (max-width: 768px) {
+			.container {
+				padding: 0 !important;
+			}
+		}
+		table {
+			width: 100%;
+			text-align: center;
+			tr {
+				th {
+					font-size: 1.25rem;
+					text-transform: uppercase;
+					color: $clr-primary-6;
+				}
+			}
+			@media (max-width: 768px) {
+				th {
+					font-size: 1rem !important;
+				}
+			}
+			tbody {
+				tr {
+					background-color: $clr-primary-5;
+					td {
+						padding: 0.3rem;
+						font-size: 1.2rem;
+						color: $clr-grey-1;
+						button {
+							width: fit-content;
+							font-weight: 600;
+							text-transform: capitalize;
+
+							cursor: pointer;
+							transition: $transition;
+							&.updBtn:hover {
+								background-color: $clr-primary-6;
+								color: $clr-primary-1;
+							}
+							&.delBtn:hover {
+								background-color: rgb(214, 28, 78);
+								color: $clr-grey-1;
+							}
+						}
+					}
+					@media (max-width: 768px) {
+						td {
+							padding: 0;
+						}
+						button {
+							margin: 4px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
