@@ -122,6 +122,9 @@ function createProdcut() {
 
 			// Back to defult of the mood
 			mood = "create";
+			
+			// Clear inputs
+			clearInputs();
 		}
 	}
 
